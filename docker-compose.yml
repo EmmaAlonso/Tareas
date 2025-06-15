@@ -10,3 +10,11 @@ services:
       MYSQL_DATABASE: tareasdb
     ports:
       - "3306:3306"
+
+  springapp:
+    build: .
+    container_name: springboot-app
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
